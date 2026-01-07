@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    container_name: mood-tracker-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    restart: always
