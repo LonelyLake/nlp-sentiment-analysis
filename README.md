@@ -33,8 +33,8 @@ This allows the system to learn from data patterns rather than fixed dictionarie
 
 1. **Clone & Navigate:**
 ```bash
-git clone <your-repo-link>
-cd <repo-folder>
+git clone https://github.com/LonelyLake/NLP-Sentiment-Tracker.git
+cd NLP-Sentiment-Tracker
 
 ```
 
