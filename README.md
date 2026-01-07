@@ -18,7 +18,9 @@ A containerized sentiment analysis microservice that transitions from rule-based
 The core of this project is the transition from **Rule-based analysis** to **Statistical Probability**.
 The model utilizes **Bayes' Theorem**:
 
-
+$$
+P(Sentiment|Word) = \frac{P(Word|Sentiment) \cdot P(Sentiment)}{P(Word)}
+$$
 
 This allows the system to learn from data patterns rather than fixed dictionaries.
 
