@@ -2,7 +2,7 @@
 
 A production-ready ML microservice for sentiment analysis, built with MLOps best practices.
 
-![CI Pipeline](https://github.com/LonelyLake/NLP-Sentiment-Analysis/actions/workflows/ci.yml/badge.svg)
+![CI Pipeline](https://github.com/LonelyLake/nlp-sentiment-analysis/actions/workflows/ci.yml/badge.svg)
 
 ## 🚀 Features
 
