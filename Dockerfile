@@ -5,14 +5,12 @@ WORKDIR /app
 # Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN python -m textblob.download_corpora
 
-# Copy all project files
+# Copy project files
 COPY . .
 
-# FastAPI runs on port 8000 by default
+# Expose API port
 EXPOSE 8000
 
-# Run uvicorn inside the container
-# 0.0.0.0 makes the server reachable outside the container
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the NEW app.py file
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
