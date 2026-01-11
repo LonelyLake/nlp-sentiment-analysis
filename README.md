@@ -1,58 +1,71 @@
-# 🚀 Professional NLP Mood Tracker
+# 🎭 Sentiment Analysis API
 
-A containerized sentiment analysis microservice that transitions from rule-based NLP to a probabilistic **Naive Bayes** model.
+A production-ready ML microservice for sentiment analysis, built with MLOps best practices.
 
-## 🏗️ Architecture & Features
+![CI Pipeline](https://github.com/LonelyLake/NLP-Sentiment-Analysis/actions/workflows/ci.yml/badge.svg)
 
-* **API First:** Powered by **FastAPI**, featuring an interactive **Swagger UI** for testing.
-* **Custom ML Model:** Replaced `TextBlob` with a custom-trained **Multinomial Naive Bayes** classifier.
-* **MLOps Foundation:** - **Containerization:** Fully Dockerized with optimized `python:3.13-slim` image.
-* **Orchestration:** Managed via **Docker Compose** for seamless environment setup.
-* **Data Persistence:** Uses **Docker Volumes** to sync sentiment logs (`mood_history.csv`) between the container and the host machine.
+## 🚀 Features
 
+- **FastAPI** REST API with automatic Swagger docs
+- **Scikit-learn** Naive Bayes classifier trained on IMDB reviews
+- **Docker** containerization for easy deployment
+- **Automated testing** with pytest
+- **CI/CD pipeline** with GitHub Actions
 
-* **Resource Optimized:** Configured for high performance even on 8GB RAM systems.
+## 📁 Project Structure
 
-## 📐 Mathematical Perspective
+```
+├── app.py              # FastAPI application
+├── train_model.py      # Model training pipeline
+├── scripts/
+│   └── ingest_data.py  # Data ingestion from HuggingFace
+├── tests/
+│   └── test_app.py     # Unit tests
+├── Dockerfile          # Container configuration
+└── .github/workflows/  # CI/CD automation
+```
 
-The core of this project is the transition from **Rule-based analysis** to **Statistical Probability**.
-The model utilizes **Bayes' Theorem**:
+## ⚡ Quick Start
 
-$$
-P(Sentiment|Word) = \frac{P(Word|Sentiment) \cdot P(Sentiment)}{P(Word)}
-$$
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
 
-This allows the system to learn from data patterns rather than fixed dictionaries.
+# 2. Download data and train model
+python scripts/ingest_data.py
+python train_model.py
+
+# 3. Run API
+uvicorn app:app --reload
+
+# 4. Open browser
+# http://127.0.0.1:8000/docs
+```
+
+## 🐳 Docker
+
+```bash
+docker-compose up --build
+```
+
+## 🧪 Run Tests
+
+```bash
+pytest --verbose
+```
+
+## 📊 API Endpoints
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| POST | `/predict` | Analyze sentiment of text |
+| GET | `/health` | Health check |
 
 ## 🛠️ Tech Stack
 
-* **Backend:** Python 3.13, FastAPI, Uvicorn
-* **Machine Learning:** Scikit-Learn (Naive Bayes), Joblib (Serialization)
-* **DevOps:** Docker, Docker Compose
-* **Environment:** Miniconda (ds env), WSL2
-
-## 🚀 How to Run
-
-1. **Clone & Navigate:**
-```bash
-git clone https://github.com/LonelyLake/NLP-Sentiment-Tracker.git
-cd NLP-Sentiment-Tracker
-
-```
-
-
-2. **Train the Model (Optional):**
-```bash
-python train_model.py
-
-```
-
-
-3. **Launch the Microservice:**
-```bash
-docker-compose up -d
-
-```
-
-
-4. **Access the API:** Open `http://localhost:8000/docs` to use the Swagger UI.
+- Python 3.11
+- FastAPI
+- Scikit-learn
+- Docker
+- GitHub Actions
+- pytest
