@@ -1,4 +1,22 @@
+# Python cache
 .ipynb_checkpoints/
 __pycache__/
 *.pyc
+
+# OS files
 .DS_Store
+
+# Project specific: Ignore Data and Models
+data/
+models/
+*.pkl
+*.csv
+
+# Virtual Environments
+venv/
+env/
+.env
+
+# IDE settings
+.vscode/
+.idea/
