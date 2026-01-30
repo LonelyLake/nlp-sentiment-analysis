@@ -6,7 +6,7 @@ ML-powered REST API for sentiment analysis, designed with a strong focus on clea
 
 ## 📖 Description
 
-This project demonstrates a production-ready machine learning system for sentiment analysis, showcasing best practices in MLOps, software engineering, and API design. The API analyzes text sentiment using a trained Multinomial Naive Bayes classifier on the IMDB movie reviews dataset from HuggingFace.
+This project demonstrates a production-ready machine learning system for sentiment analysis, showcasing best practices in MLOps, software engineering, and API design. The API analyzes text sentiment using a trained Multinomial Naive Bayes classifier on the IMDB movie reviews dataset from Hugging Face.
 
 ## ✨ Key Highlights
 
@@ -115,7 +115,7 @@ Future enhancements to make this project even more production-ready:
 
 ### ML & Data Science
 - **Scikit-learn**: Multinomial Naive Bayes classifier with CountVectorizer
-- **HuggingFace Datasets**: Data ingestion from IMDB movie reviews
+- **Hugging Face Datasets**: Data ingestion from IMDB movie reviews
 - **Pandas**: Data manipulation and preprocessing
 - **joblib**: Model serialization and persistence
 
