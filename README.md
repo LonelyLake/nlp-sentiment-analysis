@@ -32,6 +32,8 @@ This project demonstrates a production-ready machine learning system for sentime
 
 ## ⚡ Quick Start
 
+### Using pip
+
 ```bash
 # 1. Install dependencies
 pip install -r requirements.txt
@@ -42,6 +44,23 @@ python train_model.py
 
 # 3. Run API
 uvicorn app:app --reload
+
+# 4. Open browser
+# http://127.0.0.1:8000/docs
+```
+
+### Using uv (Alternative)
+
+```bash
+# 1. Install dependencies
+uv add scikit-learn pandas datasets joblib fastapi uvicorn pydantic
+
+# 2. Download data and train model
+uv run python scripts/ingest_data.py
+uv run python train_model.py
+
+# 3. Run API
+uv run uvicorn app:app --reload
 
 # 4. Open browser
 # http://127.0.0.1:8000/docs
