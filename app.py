@@ -3,7 +3,8 @@ from pydantic import BaseModel
 import joblib
 import os
 
-# Define the input schema (Good Engineering Practice)
+
+# Define the input schema
 class SentimentRequest(BaseModel):
     text: str
 
@@ -24,15 +25,13 @@ if not os.path.exists(MODEL_PATH) or not os.path.exists(VECTORIZER_PATH):
 model = joblib.load(MODEL_PATH)
 vectorizer = joblib.load(VECTORIZER_PATH)
 
-# Dictionary to map numeric labels back to strings
+# Map numeric labels back to strings
 LABEL_MAP = {0: "Negative", 1: "Positive"}
 
 @app.post("/predict", response_model=SentimentResponse)
 def predict_sentiment(request: SentimentRequest):
-    # Vectorize input
     vec_text = vectorizer.transform([request.text])
     
-    # Predict
     prediction = model.predict(vec_text)[0]
     prob = model.predict_proba(vec_text).max()
     
